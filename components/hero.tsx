@@ -47,9 +47,36 @@ const SkillIcon = ({
 
 export default function Hero() {
   const { scrollYProgress } = useScroll();
-  const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
-  const y = useTransform(scrollYProgress, [0, 0.2], [0, 100]);
-  const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.9]);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Check if we're on mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Initial check
+    checkMobile();
+
+    // Add resize listener
+    window.addEventListener("resize", checkMobile);
+
+    // Cleanup
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  // Only apply transforms on non-mobile devices
+  const opacity = useTransform(
+    scrollYProgress,
+    [0, 0.2],
+    [1, isMobile ? 1 : 0]
+  );
+  const y = useTransform(scrollYProgress, [0, 0.2], [0, isMobile ? 0 : 100]);
+  const scale = useTransform(
+    scrollYProgress,
+    [0, 0.2],
+    [1, isMobile ? 1 : 0.9]
+  );
 
   const [typedText, setTypedText] = useState("");
   const phrases = [
@@ -92,7 +119,7 @@ export default function Hero() {
   }, [charIndex, isDeleting, phraseIndex, phrases, typingSpeed]);
 
   return (
-    <section className="relative w-full h-[calc(100vh-90px)] flex items-center overflow-hidden">
+    <section className="relative w-full h-full xl:h-[calc(100vh-90px)] flex items-center lg:overflow-hidden">
       <div className="container px-4 md:px-6 mx-auto">
         <motion.div
           style={{ opacity, y, scale }}

@@ -304,24 +304,39 @@ export default function Testimonials() {
             name: "Rafay Zia - Client Testimonials",
             description:
               "Client testimonials for Rafay Zia, a full stack developer specializing in React, Next.js, and Node.js",
+            reviewedBy: testimonials.map((testimonial, index) => ({
+              "@type": "Review",
+              "@id": `https://rafayzia.dev/#review-${index + 1}`,
+              reviewRating: {
+                "@type": "Rating",
+                ratingValue: "5",
+                bestRating: "5",
+              },
+              author: {
+                "@type": "Person",
+                name: testimonial.clientName,
+              },
+              datePublished: testimonial.date.split(" - ")[0],
+              reviewBody: testimonial.text,
+            })),
             mainEntity: {
-              "@type": "Person",
-              "@id": "https://rafayzia.dev/#person",
-              name: "Rafay Zia",
-              jobTitle: "Full Stack Developer",
-              description:
-                "Full Stack Developer specializing in React, Next.js, and Node.js with 4+ years of experience.",
-              url: "https://rafayzia.dev",
-              sameAs: [
-                "https://github.com/",
-                "https://linkedin.com/in/",
-                "https://www.upwork.com/freelancers/~016187e6d333d1a266",
-              ],
+              "@type": "CreativeWork",
+              "@id": "https://rafayzia.dev/#portfolio",
+              name: "Rafay Zia's Development Portfolio",
+              creator: {
+                "@type": "Person",
+                "@id": "https://rafayzia.dev/#person",
+              },
               aggregateRating: {
                 "@type": "AggregateRating",
                 ratingValue: "5",
                 bestRating: "5",
                 ratingCount: testimonials.length.toString(),
+                itemReviewed: {
+                  "@type": "CreativeWork",
+                  "@id": "https://rafayzia.dev/#portfolio",
+                  name: "Rafay Zia's Development Services",
+                },
               },
             },
           }),

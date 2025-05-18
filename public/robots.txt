@@ -1,0 +1,10 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Disallow private and API routes
+Disallow: /private/
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://rafayzia.dev/sitemap.xml

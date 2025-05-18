@@ -1,5 +1,6 @@
-import Link from "next/link"
-import { Github, Linkedin, Mail, Twitter } from "lucide-react"
+import Link from "next/link";
+import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -39,6 +40,15 @@ export default function Footer() {
             <span className="sr-only">LinkedIn</span>
           </Link>
           <Link
+            href="https://www.upwork.com/freelancers/~016187e6d333d1a266"
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-md p-2 text-[#6FDA44] hover:bg-[#6FDA44]/10 hover:text-[#6FDA44]"
+          >
+            <Image src="/upwork-logo.png" alt="Upwork" width={20} height={20} />
+            <span className="sr-only">Upwork</span>
+          </Link>
+          <Link
             href="mailto:rafayzia10@gmail.com"
             className="rounded-md p-2 text-muted-foreground hover:bg-muted hover:text-foreground"
           >
@@ -48,5 +58,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

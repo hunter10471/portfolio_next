@@ -1,43 +1,54 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import { ModeToggle } from "./mode-toggle"
-import { Button } from "@/components/ui/button"
-import { Menu, X } from "lucide-react"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { ModeToggle } from "./mode-toggle";
+import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 const navigation = [
   { name: "Home", href: "#" },
   { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
+  { name: "Testimonials", href: "#testimonials" },
   { name: "Contact", href: "#contact" },
-]
+];
 
 export default function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 10)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+      setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full transition-all duration-200 ${scrolled ? "bg-background/80 backdrop-blur-md border-b" : ""}`}
+      className={`sticky top-0 z-50 w-full transition-all duration-200 ${
+        scrolled ? "bg-background/80 backdrop-blur-md border-b" : ""
+      }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+      <nav
+        className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+        aria-label="Global"
+      >
         <div className="flex lg:flex-1">
           <Link href="#" className="-m-1.5 p-1.5">
             <span className="text-xl font-bold">Rafay Zia</span>
           </Link>
         </div>
         <div className="flex lg:hidden">
-          <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(true)}>
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setMobileMenuOpen(true)}
+          >
             <Menu className="h-6 w-6" />
             <span className="sr-only">Open main menu</span>
           </Button>
@@ -50,10 +61,10 @@ export default function Header() {
               className="text-sm font-semibold leading-6 text-foreground hover:text-primary"
               onClick={(e) => {
                 if (item.href.startsWith("#")) {
-                  e.preventDefault()
-                  const element = document.querySelector(item.href)
+                  e.preventDefault();
+                  const element = document.querySelector(item.href);
                   if (element) {
-                    element.scrollIntoView({ behavior: "smooth" })
+                    element.scrollIntoView({ behavior: "smooth" });
                   }
                 }
               }}
@@ -62,7 +73,16 @@ export default function Header() {
             </Link>
           ))}
         </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-4 items-center">
+          <Link
+            href="https://www.upwork.com/freelancers/~016187e6d333d1a266"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#6FDA44] hover:text-[#5ec233] flex items-center gap-1"
+            aria-label="Upwork Profile"
+          >
+            <Image src="/upwork-logo.png" alt="Upwork" width={30} height={30} />
+          </Link>
           <ModeToggle />
         </div>
       </nav>
@@ -75,7 +95,11 @@ export default function Header() {
               <Link href="#" className="-m-1.5 p-1.5">
                 <span className="text-xl font-bold">Rafay Zia</span>
               </Link>
-              <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(false)}>
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 <X className="h-6 w-6" />
                 <span className="sr-only">Close menu</span>
               </Button>
@@ -88,12 +112,12 @@ export default function Header() {
                     href={item.href}
                     className="block px-3 py-2 text-base font-semibold leading-7 text-foreground hover:bg-muted rounded-md"
                     onClick={(e) => {
-                      setMobileMenuOpen(false)
+                      setMobileMenuOpen(false);
                       if (item.href.startsWith("#")) {
-                        e.preventDefault()
-                        const element = document.querySelector(item.href)
+                        e.preventDefault();
+                        const element = document.querySelector(item.href);
                         if (element) {
-                          element.scrollIntoView({ behavior: "smooth" })
+                          element.scrollIntoView({ behavior: "smooth" });
                         }
                       }
                     }}
@@ -102,7 +126,22 @@ export default function Header() {
                   </Link>
                 ))}
               </div>
-              <div className="py-6">
+              <div className="py-6 flex items-center gap-4">
+                <Link
+                  href="https://www.upwork.com/freelancers/~016187e6d333d1a266"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#6FDA44] hover:text-[#5ec233] flex items-center gap-1"
+                  aria-label="Upwork Profile"
+                >
+                  <Image
+                    src="/upwork-logo.png"
+                    alt="Upwork"
+                    width={30}
+                    height={30}
+                  />
+                  <span>Upwork Profile</span>
+                </Link>
                 <ModeToggle />
               </div>
             </div>
@@ -110,5 +149,5 @@ export default function Header() {
         </div>
       )}
     </header>
-  )
+  );
 }

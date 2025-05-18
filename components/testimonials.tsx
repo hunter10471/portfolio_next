@@ -299,37 +299,30 @@ export default function Testimonials() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Service",
-            name: "Rafay Zia - Full Stack Development Services",
-            serviceType: "Web Development",
-            provider: {
+            "@type": "WebPage",
+            "@id": "https://rafayzia.dev/#testimonials",
+            name: "Rafay Zia - Client Testimonials",
+            description:
+              "Client testimonials for Rafay Zia, a full stack developer specializing in React, Next.js, and Node.js",
+            mainEntity: {
               "@type": "Person",
+              "@id": "https://rafayzia.dev/#person",
               name: "Rafay Zia",
+              jobTitle: "Full Stack Developer",
+              description:
+                "Full Stack Developer specializing in React, Next.js, and Node.js with 4+ years of experience.",
               url: "https://rafayzia.dev",
-            },
-            review: testimonials.map((testimonial) => ({
-              "@type": "Review",
-              reviewRating: {
-                "@type": "Rating",
+              sameAs: [
+                "https://github.com/",
+                "https://linkedin.com/in/",
+                "https://www.upwork.com/freelancers/~016187e6d333d1a266",
+              ],
+              aggregateRating: {
+                "@type": "AggregateRating",
                 ratingValue: "5",
                 bestRating: "5",
+                ratingCount: testimonials.length.toString(),
               },
-              author: {
-                "@type": "Person",
-                name: testimonial.clientName,
-              },
-              datePublished: testimonial.date.split(" - ")[0],
-              reviewBody: testimonial.text,
-              publisher: {
-                "@type": "Organization",
-                name: "Upwork",
-              },
-            })),
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: "5",
-              reviewCount: testimonials.length.toString(),
-              bestRating: "5",
             },
           }),
         }}

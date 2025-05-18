@@ -299,46 +299,34 @@ export default function Testimonials() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "WebPage",
-            "@id": "https://rafayzia.dev/#testimonials",
-            name: "Rafay Zia - Client Testimonials",
-            description:
-              "Client testimonials for Rafay Zia, a full stack developer specializing in React, Next.js, and Node.js",
-            reviewedBy: testimonials.map((testimonial, index) => ({
-              "@type": "Review",
-              "@id": `https://rafayzia.dev/#review-${index + 1}`,
-              reviewRating: {
-                "@type": "Rating",
-                ratingValue: "5",
-                bestRating: "5",
-              },
-              author: {
-                "@type": "Person",
-                name: testimonial.clientName,
-              },
-              datePublished: testimonial.date.split(" - ")[0],
-              reviewBody: testimonial.text,
-            })),
-            mainEntity: {
-              "@type": "CreativeWork",
-              "@id": "https://rafayzia.dev/#portfolio",
-              name: "Rafay Zia's Development Portfolio",
-              creator: {
-                "@type": "Person",
-                "@id": "https://rafayzia.dev/#person",
-              },
-              aggregateRating: {
-                "@type": "AggregateRating",
-                ratingValue: "5",
-                bestRating: "5",
-                ratingCount: testimonials.length.toString(),
+            "@type": "ItemList",
+            itemListElement: testimonials.map((testimonial, index) => ({
+              "@type": "ListItem",
+              position: index + 1,
+              item: {
+                "@type": "Review",
+                reviewRating: {
+                  "@type": "Rating",
+                  ratingValue: "5",
+                  bestRating: "5",
+                },
+                author: {
+                  "@type": "Person",
+                  name: testimonial.clientName,
+                },
+                datePublished: testimonial.date.split(" - ")[0],
+                reviewBody: testimonial.text,
                 itemReviewed: {
-                  "@type": "CreativeWork",
-                  "@id": "https://rafayzia.dev/#portfolio",
-                  name: "Rafay Zia's Development Services",
+                  "@type": "Service",
+                  name: testimonial.title,
+                  provider: {
+                    "@type": "Person",
+                    name: "Rafay Zia",
+                  },
+                  serviceType: "Web Development",
                 },
               },
-            },
+            })),
           }),
         }}
       />

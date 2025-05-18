@@ -1,9 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
+import { NextResponse } from "next/server"
+
+export async function GET() {
+  // Generate the sitemap XML
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://rafayzia.dev</loc>
-    <lastmod>2023-05-19</lastmod>
+    <lastmod>${new Date().toISOString()}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -14,32 +18,40 @@
   </url>
   <url>
     <loc>https://rafayzia.dev/#about</loc>
-    <lastmod>2023-05-19</lastmod>
+    <lastmod>${new Date().toISOString()}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rafayzia.dev/#skills</loc>
-    <lastmod>2023-05-19</lastmod>
+    <lastmod>${new Date().toISOString()}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rafayzia.dev/#projects</loc>
-    <lastmod>2023-05-19</lastmod>
+    <lastmod>${new Date().toISOString()}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://rafayzia.dev/#testimonials</loc>
-    <lastmod>2023-05-19</lastmod>
+    <lastmod>${new Date().toISOString()}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rafayzia.dev/#contact</loc>
-    <lastmod>2023-05-19</lastmod>
+    <lastmod>${new Date().toISOString()}</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
-</urlset>
+</urlset>`
+
+  return new NextResponse(xml, {
+    headers: {
+      "Content-Type": "application/xml",
+      "Cache-Control": "public, max-age=86400, s-maxage=86400",
+    },
+  })
+}

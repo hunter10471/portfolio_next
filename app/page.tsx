@@ -7,6 +7,7 @@ import Testimonials from "@/components/testimonials";
 import Contact from "@/components/contact";
 import SeoHeadings from "@/components/seo-headings";
 import Script from "next/script";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -19,6 +20,9 @@ export default function Home() {
       <Projects />
       <Testimonials />
       <Contact />
+      <div className="hidden">
+        <Image src="/me.jpg" alt="Rafay Zia - Full Stack Developer" width={800} height={800} priority />
+      </div>
 
       {/* Structured data for WebSite */}
       <Script

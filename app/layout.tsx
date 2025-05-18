@@ -121,6 +121,18 @@ export default function RootLayout({
           href="/favicon-16x16.png"
         />
         <link rel="manifest" href="/site.webmanifest" />
+        
+        {/* Profile image for Google Knowledge Graph */}
+        <link rel="image_src" href="/me.jpg" />
+        <meta property="og:image" content="https://rafayzia.dev/me.jpg" />
+        <meta property="og:image:alt" content="Rafay Zia - Full Stack Developer" />
+        <meta property="og:image:width" content="800" />
+        <meta property="og:image:height" content="800" />
+        <meta property="og:type" content="profile" />
+        <meta property="profile:first_name" content="Rafay" />
+        <meta property="profile:last_name" content="Zia" />
+        <meta property="profile:username" content="rafayzia" />
+        <meta property="profile:gender" content="male" />
       </head>
       <body className={inter.className}>
         <ThemeProvider

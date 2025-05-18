@@ -43,9 +43,10 @@ export default function About() {
                     <div className="relative w-72 h-72 rounded-full overflow-hidden mb-4 border-4 border-primary/20">
                       <Image
                         src="/me.jpg"
-                        alt="Profile"
+                        alt="Rafay Zia - Full Stack Developer"
                         fill
                         className="object-cover"
+                        priority
                       />
                     </div>
                     <h3 className="text-2xl font-bold mb-2">My Journey</h3>

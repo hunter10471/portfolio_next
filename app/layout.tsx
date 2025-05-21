@@ -7,6 +7,7 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { Toaster } from "@/components/ui/toaster";
 import Script from "next/script";
+import Image from "next/image";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +21,15 @@ export const metadata: Metadata = {
   description:
     "Experienced full stack developer specializing in React, Next.js, and Node.js with 4+ years of experience. View my portfolio of 29+ successful projects with 5-star ratings.",
   keywords: [
+    "Rafay",
+    "rafay",
     "Rafay Zia",
+    "rafay zia",
+    "Zia",
+    "zia",
+    "Upwork",
+    "upwork",
+    "Freelancer",
     "Full Stack Developer",
     "React Developer",
     "Next.js Developer",
@@ -133,6 +142,9 @@ export default function RootLayout({
         <meta property="profile:last_name" content="Zia" />
         <meta property="profile:username" content="rafayzia" />
         <meta property="profile:gender" content="male" />
+        <meta property="og:title" content="Rafay Zia | Full Stack Developer & React Specialist" />
+        <meta property="og:site_name" content="Rafay Zia" />
+        <meta name="author" content="Rafay Zia" />
       </head>
       <body className={inter.className}>
         <ThemeProvider
@@ -159,17 +171,18 @@ export default function RootLayout({
               "@type": "Person",
               name: "Rafay Zia",
               url: "https://rafayzia.dev",
-              jobTitle: "Full Stack Developer",
+              jobTitle: "Full Stack Developer & React Specialist",
               worksFor: {
                 "@type": "Organization",
                 name: "Freelance",
               },
               sameAs: [
-                "https://github.com/",
-                "https://linkedin.com/in/",
-                "https://twitter.com/",
+                "https://github.com/hunter10471",
+                "https://linkedin.com/in/rafayzia",
+                "https://twitter.com/rafayzia",
                 "https://www.upwork.com/freelancers/~016187e6d333d1a266",
               ],
+              image: "https://rafayzia.dev/me.jpg",
               description:
                 "Full Stack Developer specializing in React, Next.js, and Node.js with 4+ years of experience.",
               knowsAbout: [
@@ -203,6 +216,14 @@ export default function RootLayout({
             gtag('config', 'G-XXXXXXXXXX');
           `}
         </Script>
+
+        <Image
+          src="/me.jpg"
+          alt="Rafay Zia - Full Stack Developer & React Specialist"
+          width={800}
+          height={800}
+          priority
+        />
       </body>
     </html>
   );

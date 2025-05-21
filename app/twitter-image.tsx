@@ -76,7 +76,7 @@ export default async function Image() {
             color: "#666",
           }}
         >
-          rafayzia.dev
+          Rafay Zia
         </div>
       </div>
     ),

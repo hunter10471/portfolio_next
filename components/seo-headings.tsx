@@ -14,9 +14,8 @@ export default function SeoHeadings() {
   }, []);
 
   return (
-    <h1 ref={headingRef} className="sr-only" tabIndex={-1}>
-      Rafay Zia - Full Stack Developer specializing in React, Next.js, and
-      Node.js
+    <h1 ref={headingRef} className="text-4xl font-bold" tabIndex={-1}>
+      Rafay Zia - Full Stack Developer & React Specialist
     </h1>
   );
 }

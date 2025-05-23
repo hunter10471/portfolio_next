@@ -14,7 +14,7 @@ export default function SeoHeadings() {
   }, []);
 
   return (
-    <h1 ref={headingRef} className="text-4xl font-bold" tabIndex={-1}>
+    <h1 ref={headingRef} className="text-4xl font-bold hidden" tabIndex={-1}>
       Rafay Zia - Full Stack Developer & React Specialist
     </h1>
   );

@@ -20,9 +20,7 @@ export default function Home() {
       <Projects />
       <Testimonials />
       <Contact />
-      <div className="hidden">
-        <Image src="/me.jpg" alt="Rafay Zia - Full Stack Developer" width={800} height={800} priority />
-      </div>
+      <Image className="hidden" src="/me.jpg" alt="Rafay Zia - Full Stack Developer" width={800} height={800} priority />
 
       {/* Structured data for WebSite */}
       <Script

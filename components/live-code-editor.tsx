@@ -698,13 +698,13 @@ export function LiveCodeEditor() {
           <div className="grid grid-cols-3 gap-3 text-center">
             <div className="p-1">
               <div className="text-lg font-bold bg-gradient-to-r from-blue-400 to-blue-300 bg-clip-text text-transparent">
-                29
+                31
               </div>
               <div className="text-xs text-gray-400">Projects</div>
             </div>
             <div className="p-1 border-x border-gray-700">
               <div className="text-lg font-bold bg-gradient-to-r from-purple-400 to-purple-300 bg-clip-text text-transparent">
-                96%
+                100%
               </div>
               <div className="text-xs text-gray-400">Success</div>
             </div>

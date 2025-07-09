@@ -13,7 +13,7 @@ export default function aboutJson() {
     ],
     image: "https://rafayzia.dev/me.jpg",
     description:
-      "Full Stack Developer specializing in React, Next.js, and Node.js with 2+ years of experience. Completed 29+ successful projects with 5-star ratings.",
+      "Full Stack Developer specializing in React, Next.js, and Node.js with 2+ years of experience. Completed 31+ successful projects with 5-star ratings.",
     alumniOf: {
       "@type": "CollegeOrUniversity",
       name: "NED University of Engineering & Technology",

@@ -112,7 +112,7 @@ export default function Home() {
                 name: "How much experience does Rafay Zia have?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Rafay Zia has over 4 years of experience in web development, having completed 29+ projects on Upwork with 5-star ratings and maintaining a 96% job success score.",
+                  text: "Rafay Zia has over 2 years of experience in web development, having completed 31+ projects on Upwork with 5-star ratings and maintaining a 100% job success score.",
                 },
               },
               {

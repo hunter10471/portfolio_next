@@ -96,7 +96,7 @@ export default function About() {
                         Professional Experience
                       </h3>
                       <p className="text-muted-foreground mb-4">
-                        With over 4 years of experience in web development, I've
+                        With over 2 years of experience in web development, I've
                         worked on a diverse range of projects from small
                         business websites to complex enterprise applications.
                         I've completed{" "}
@@ -106,11 +106,11 @@ export default function About() {
                           rel="noopener noreferrer"
                           className="font-bold text-primary hover:underline inline-flex items-center"
                         >
-                          29 jobs on Upwork
+                          31 jobs on Upwork
                         </Link>{" "}
                         with 5-star ratings and maintain a{" "}
                         <span className="font-bold text-primary">
-                          96% job success score
+                          100% job success score
                         </span>
                         , having earned over{" "}
                         <span className="font-bold text-primary">$15,000</span>.
@@ -174,7 +174,7 @@ export default function About() {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="bg-primary/10 rounded-lg p-6 text-center"
             >
-              <div className="text-4xl font-bold text-primary mb-2">29</div>
+              <div className="text-4xl font-bold text-primary mb-2">31</div>
               <div className="text-sm text-muted-foreground">
                 Completed Projects
               </div>
@@ -187,7 +187,7 @@ export default function About() {
               transition={{ duration: 0.5, delay: 0.5 }}
               className="bg-primary/10 rounded-lg p-6 text-center"
             >
-              <div className="text-4xl font-bold text-primary mb-2">96%</div>
+              <div className="text-4xl font-bold text-primary mb-2">100%</div>
               <div className="text-sm text-muted-foreground">
                 Job Success Score
               </div>
@@ -200,9 +200,9 @@ export default function About() {
               transition={{ duration: 0.5, delay: 0.6 }}
               className="bg-primary/10 rounded-lg p-6 text-center"
             >
-              <div className="text-4xl font-bold text-primary mb-2">$15k+</div>
+              <div className="text-4xl font-bold text-primary mb-2">$15,000+</div>
               <div className="text-sm text-muted-foreground">
-                Earned on Upwork
+                Earned
               </div>
             </motion.div>
           </div>

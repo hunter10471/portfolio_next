@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     template: "%s | Rafay Zia - Full Stack Developer",
   },
   description:
-    "Experienced full stack developer specializing in React, Next.js, and Node.js with 4+ years of experience. View my portfolio of 29+ successful projects with 5-star ratings.",
+    "Experienced full stack developer specializing in React, Next.js, and Node.js with 2+ years of experience. View my portfolio of 29+ successful projects with 5-star ratings.",
   keywords: [
     "Rafay",
     "rafay",
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     url: "https://rafayzia.dev",
     title: "Rafay Zia | Full Stack Developer & React Specialist",
     description:
-      "Experienced full stack developer specializing in React, Next.js, and Node.js with 4+ years of experience. View my portfolio of 29+ successful projects with 5-star ratings.",
+      "Experienced full stack developer specializing in React, Next.js, and Node.js with 2+ years of experience. View my portfolio of 29+ successful projects with 5-star ratings.",
     siteName: "Rafay Zia - Full Stack Developer",
     images: [
       {
@@ -85,7 +85,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Rafay Zia | Full Stack Developer & React Specialist",
     description:
-      "Experienced full stack developer specializing in React, Next.js, and Node.js with 4+ years of experience. View my portfolio of 29+ successful projects with 5-star ratings.",
+      "Experienced full stack developer specializing in React, Next.js, and Node.js with 2+ years of experience. View my portfolio of 29+ successful projects with 5-star ratings.",
     images: ["https://rafayzia.dev/og-image.jpg"],
     creator: "@rafayzia",
   },
@@ -184,7 +184,7 @@ export default function RootLayout({
               ],
               image: "https://rafayzia.dev/me.jpg",
               description:
-                "Full Stack Developer specializing in React, Next.js, and Node.js with 4+ years of experience.",
+                "Full Stack Developer specializing in React, Next.js, and Node.js with 2+ years of experience.",
               knowsAbout: [
                 "React",
                 "Next.js",

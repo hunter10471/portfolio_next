@@ -309,7 +309,7 @@ export default function Testimonials() {
               name: "Rafay Zia",
               jobTitle: "Full Stack Developer",
               description:
-                "Full Stack Developer specializing in React, Next.js, and Node.js with 4+ years of experience.",
+                "Full Stack Developer specializing in React, Next.js, and Node.js with 2+ years of experience.",
               url: "https://rafayzia.dev",
               sameAs: [
                 "https://github.com/",

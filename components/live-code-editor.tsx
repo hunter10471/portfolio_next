@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Code, Terminal, CopyIcon, CheckIcon } from "lucide-react";
+import { Terminal, CopyIcon, CheckIcon } from "lucide-react";
 import Prism from "prismjs";
 import "prismjs/components/prism-jsx";
 import "prismjs/themes/prism-tomorrow.css"; // or any other theme

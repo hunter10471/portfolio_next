@@ -139,7 +139,7 @@ export default function Hero() {
                 transition={{ delay: 0.2, duration: 0.5 }}
                 className="inline-block px-4 py-1.5 mb-4 rounded-full bg-primary/10 text-primary font-medium text-sm"
               >
-                4+ Years of Professional Experience
+                2+ Years of Professional Experience
               </motion.div>
 
               <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-2">

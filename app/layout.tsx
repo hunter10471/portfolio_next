@@ -223,6 +223,7 @@ export default function RootLayout({
           width={800}
           height={800}
           priority
+          className="hidden"
         />
       </body>
     </html>

@@ -54,7 +54,7 @@ export default function Home() {
             image: "https://rafayzia.dev/og-image.jpg",
             "@id": "https://rafayzia.dev",
             url: "https://rafayzia.dev",
-            telephone: "+11234567890",
+            telephone: "+923335207939",
             address: {
               "@type": "PostalAddress",
               addressLocality: "Karachi",

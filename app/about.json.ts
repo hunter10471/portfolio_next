@@ -26,7 +26,7 @@ export default function aboutJson() {
       addressCountry: "Pakistan",
     },
     email: "rafayzia10@gmail.com",
-    telephone: "+11234567890",
+    telephone: "+923335207939",
     birthPlace: "Abbottabad, Pakistan",
     birthDate: "2000",
     nationality: "Pakistani",

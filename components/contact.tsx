@@ -144,9 +144,9 @@ export default function Contact() {
                 <Phone className="h-6 w-6 text-primary" />
               </div>
               <h3 className="text-xl font-bold">Phone</h3>
-              <p className="text-muted-foreground">+1 (123) 456-7890</p>
+              <p className="text-muted-foreground">+92 (333) 520-7939</p>
               <Button variant="link" asChild>
-                <a href="tel:+11234567890">Call me</a>
+                <a href="tel:+923335207939">Call me</a>
               </Button>
             </motion.div>
 

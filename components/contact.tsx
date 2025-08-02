@@ -75,20 +75,31 @@ export default function Contact() {
     setIsSubmitting(true);
 
     try {
-      // Here you would typically send the form data to your backend
-      // For now, we'll just simulate a successful submission
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-
-      toast({
-        title: "Message sent!",
-        description: "Thank you for your message. I'll get back to you soon.",
+      // Send the form data to the contact API endpoint
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
       });
 
-      form.reset();
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        toast({
+          title: "Message sent!",
+          description: "Thank you for your message. I'll get back to you soon.",
+        });
+        form.reset();
+      } else {
+        throw new Error(result.error || 'Failed to send message');
+      }
     } catch (error) {
+      console.error('Error sending message:', error);
       toast({
         title: "Something went wrong.",
-        description: "Your message couldn't be sent. Please try again.",
+        description: error instanceof Error ? error.message : "Your message couldn't be sent. Please try again.",
         variant: "destructive",
       });
     } finally {
@@ -270,11 +281,6 @@ export default function Contact() {
                         type="submit"
                         className="flex-1"
                         disabled={isSubmitting}
-                        onClick={() => {
-                          if (Object.keys(form.formState.errors).length === 0) {
-                            form.handleSubmit(onSubmit)();
-                          }
-                        }}
                       >
                         {isSubmitting ? "Sending..." : "Send Message"}
                       </Button>

@@ -16,73 +16,83 @@ import { ExternalLink, Github } from "lucide-react";
 import Link from "next/link";
 import Script from "next/script";
 
-// Sample projects data - you would replace this with your actual projects
 const projects = [
   {
     id: 1,
-    title: "Restaurant Dashboard",
+    title: "Estate Elevate - Real Estate Platform",
     description:
-      "A comprehensive dashboard for restaurant management, including order tracking, inventory management, and sales analytics.",
-    image: "/placeholder.svg?height=400&width=600",
-    tags: ["React", "Node.js", "MongoDB", "Express", "Dashboard"],
-    github: "https://github.com/",
-    liveLink: "https://example.com",
+      "A modern real estate platform built with Next.js 14, featuring property listings, user authentication, real-time chat, and interactive maps. Includes advanced search, property management, favorites system, and real-time notifications.",
+    image: "/estate-ss.png",
+    tags: ["Next.js 14", "TypeScript", "PostgreSQL", "Prisma", "Pusher", "Real-time Chat", "Maps"],
+    github: "https://github.com/hunter10471/Estate-Elevate",
+    liveLink: "https://estate-elevate.vercel.app",
     category: "fullstack",
   },
   {
     id: 2,
-    title: "Stock Management System",
+    title: "Ace The AI Interview Coach",
     description:
-      "An inventory and stock management application with real-time tracking, alerts, and reporting features.",
-    image: "/placeholder.svg?height=400&width=600",
-    tags: ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Dashboard"],
-    github: "https://github.com/",
-    liveLink: "https://example.com",
-    category: "fullstack",
+      "An AI-powered interview preparation platform with personalized coaching, real-time feedback, and comprehensive progress tracking. Features practice sessions, performance analytics, and interactive interview simulations.",
+    image: "/ai-ss.png",
+    tags: ["Next.js 14", "TypeScript", "Tailwind CSS", "Framer Motion", "AI", "Interview Prep"],
+    github: "https://github.com/hunter10471/Ace-TheAI",
+    liveLink: "https://ace-the-ai.vercel.app",
+    category: "frontend",
   },
   {
     id: 3,
-    title: "Language Learning Portal",
+    title: "Financial Stock Analysis Platform",
     description:
-      "An interactive platform for language learning with progress tracking, exercises, and community features.",
-    image: "/placeholder.svg?height=400&width=600",
-    tags: ["React", "Node.js", "MongoDB", "Express", "Education"],
-    github: "https://github.com/",
-    liveLink: "https://example.com",
+      "A comprehensive stock market analysis platform with advanced screening capabilities, real-time charts, and detailed financial metrics. Features stock screener, watchlist management, and interactive data visualization.",
+    image: "/stock-ss.png",
+    tags: ["Next.js 14", "TypeScript", "Chart.js", "Algolia", "Firebase", "Financial Data"],
+    github: "",
+    liveLink: "https://tweevest.com",
     category: "fullstack",
   },
   {
     id: 4,
-    title: "E-commerce Website",
+    title: "Language Learning Web Application",
     description:
-      "A modern e-commerce platform with product catalog, shopping cart, and secure checkout functionality.",
-    image: "/placeholder.svg?height=400&width=600",
-    tags: ["Next.js", "Tailwind CSS", "Stripe", "Supabase", "E-commerce"],
-    github: "https://github.com/",
-    liveLink: "https://example.com",
-    category: "frontend",
+      "A comprehensive, full-stack language learning platform with interactive flashcards, vocabulary management, and assessment tools. Features spaced repetition, progress tracking, and mobile-responsive design.",
+    image: "/language-learning-ss.png",
+    tags: ["Next.js 13+", "TypeScript", "Tailwind CSS", "Framer Motion", "Flashcards", "Education"],
+    github: "",
+    liveLink: "https://dev.linguahub.com/vocabulary",
+    category: "fullstack",
   },
   {
     id: 5,
-    title: "API Gateway Service",
+    title: "Restaurant Management System Backend",
     description:
-      "A microservice gateway that handles routing, authentication, and rate limiting for a distributed system.",
-    image: "/placeholder.svg?height=400&width=600",
-    tags: ["Node.js", "Express", "Docker", "Microservices", "API"],
-    github: "https://github.com/",
-    liveLink: null,
+      "Enterprise-grade RESTful API backend service for restaurant management with order processing, inventory management, payment integration, and real-time features. Built with Node.js, Express, and TypeScript.",
+    image: "/api-ss.png",
+    tags: ["Node.js", "Express", "TypeScript", "MySQL", "Socket.IO", "Stripe", "AWS S3"],
+    github: "",
+    liveLink: "http://194.164.91.243:5000/api-docs/#/",
     category: "backend",
   },
   {
     id: 6,
     title: "Portfolio Website",
     description:
-      "A professional portfolio website built with Next.js and Tailwind CSS.",
-    image: "/placeholder.svg?height=400&width=600",
-    tags: ["Next.js", "Tailwind CSS", "Framer Motion", "Portfolio"],
-    github: "https://github.com/",
-    liveLink: "https://example.com",
+      "A modern, responsive portfolio website built with Next.js 14, TypeScript, and Tailwind CSS. Features dark/light mode, interactive animations, project filtering, and a live code editor component.",
+    image: "/portfolio-ss.png",
+    tags: ["Next.js 14", "TypeScript", "Tailwind CSS", "Framer Motion", "shadcn/ui", "Portfolio"],
+    github: "github.com/hunter10471/portfolio_next",
+    liveLink: "https://rafayzia.dev",
     category: "frontend",
+  },
+  {
+    id: 7,
+    title: "API Gateway Service",
+    description:
+      "A microservice gateway that handles routing, authentication, and rate limiting for a distributed system. Currently under development.",
+    image: "/placeholder.svg?height=400&width=600",
+    tags: ["Node.js", "Express", "Docker", "Microservices", "API", "Under Development"],
+    github: "",
+    liveLink: "",
+    category: "backend",
   },
 ];
 
@@ -131,7 +141,7 @@ export default function Projects() {
             </div>
 
             <TabsContent value={activeTab} className="mt-0">
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+              <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
                 {filteredProjects.map((project, index) => (
                   <motion.div
                     key={project.id}
@@ -141,7 +151,7 @@ export default function Projects() {
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                   >
                     <Card className="h-full flex flex-col overflow-hidden">
-                      <div className="aspect-video overflow-hidden">
+                      <div className="aspect-[3/2] overflow-hidden">
                         <img
                           src={project.image || "/placeholder.svg"}
                           alt={project.title}
@@ -165,16 +175,18 @@ export default function Projects() {
                         </div>
                       </CardContent>
                       <CardFooter className="flex gap-2">
-                        <Button variant="outline" size="sm" asChild>
-                          <Link
-                            href={project.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <Github className="mr-2 h-4 w-4" />
-                            GitHub
-                          </Link>
-                        </Button>
+                        {project.github && (
+                          <Button variant="outline" size="sm" asChild>
+                            <Link
+                              href={project.github}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              <Github className="mr-2 h-4 w-4" />
+                              GitHub
+                            </Link>
+                          </Button>
+                        )}
                         {project.liveLink && (
                           <Button size="sm" asChild>
                             <Link
@@ -198,7 +210,7 @@ export default function Projects() {
           <div className="mt-12">
             <Button variant="outline" asChild>
               <Link
-                href="https://github.com/"
+                href="https://github.com/hunter10471"
                 target="_blank"
                 rel="noopener noreferrer"
               >

@@ -13,7 +13,7 @@ export default function Footer() {
         </div>
         <div className="flex gap-4">
           <Link
-            href="https://github.com/"
+            href="https://github.com/hunter10471"
             target="_blank"
             rel="noreferrer"
             className="rounded-md p-2 text-muted-foreground hover:bg-muted hover:text-foreground"
@@ -22,16 +22,7 @@ export default function Footer() {
             <span className="sr-only">GitHub</span>
           </Link>
           <Link
-            href="https://twitter.com/"
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-md p-2 text-muted-foreground hover:bg-muted hover:text-foreground"
-          >
-            <Twitter className="h-5 w-5" />
-            <span className="sr-only">Twitter</span>
-          </Link>
-          <Link
-            href="https://linkedin.com/"
+            href="https://www.linkedin.com/in/rafay-zia-1a7487213"
             target="_blank"
             rel="noreferrer"
             className="rounded-md p-2 text-muted-foreground hover:bg-muted hover:text-foreground"
